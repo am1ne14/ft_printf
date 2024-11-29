@@ -1,9 +1,12 @@
-SRCS	= utils/ft_put_char.c \
-		  utils/ft_put_str.c \
-		  utils/ft_put_nbr.c \
-		  utils/ft_put_unsigned.c \
+SRCS	= ft_printf.c \
+		  utils/check_format.c \
 		  utils/ft_put_hex.c \
-		  utils/ft_put_ptr.c
+		  utils/ft_put_ptr.c \
+		  utils/ft_put_unsigned.c \
+		  utils/ft_put_char.c \
+		  utils/ft_put_nbr.c \
+		  utils/ft_put_str.c \
+		  utils/ft_strchr.c
 
 OBJS	= ${SRCS:.c=.o}
 NAME	= libftprintf.a
