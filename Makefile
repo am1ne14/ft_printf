@@ -1,0 +1,26 @@
+SRCS	= utils/ft_put_char.c \
+		  utils/ft_put_str.c \
+		  utils/ft_put_nbr.c
+
+OBJS	= ${SRCS:.c=.o}
+NAME	= libftprintf.a
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+
+%.o: %.c ft_printf.h
+	${CC} ${CFLAGS} -c $< -o $@ -I.
+
+all: ${NAME}
+
+${NAME}: ${OBJS} ft_printf.h
+	ar rcs ${NAME} ${OBJS}
+
+clean:
+	rm -f ${OBJS}
+
+fclean: clean
+	rm -f ${NAME}
+
+re: fclean all
+
+.PHONY: all clean fclean re
